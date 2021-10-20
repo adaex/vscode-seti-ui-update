@@ -1,14 +1,20 @@
 #!/usr/bin/env bash
 
-rm -rf vscode seti-ui
-git clone https://github.com/microsoft/vscode --depth 1
-git clone https://github.com/jesseweed/seti-ui --depth 1
+cd /workspaces
 
-cd seti-ui
+if [ ! -d /workspaces/seti-ui ]; then
+  git clone https://github.com/jesseweed/seti-ui
+fi
+
+if [ ! -d /workspaces/vscode ]; then
+  git clone https://github.com/microsoft/vscode
+fi
+
+cd /workspaces/seti-ui
 npm ci
 npm run prepublishOnly
 
-cd ../vscode
+cd /workspaces/vscode
 yarn
-cd extensions/theme-seti
+cd /workspaces/vscode/extensions/theme-seti
 npm run update
