@@ -5,7 +5,7 @@ cd /workspaces
 rm -rf vscode seti-ui
 
 # clone
-git clone https://github.com/microsoft/vscode --depth 1
+git clone https://github.com/microsoft/vscode
 git clone https://github.com/jesseweed/seti-ui --depth 1
 
 # init vscode
